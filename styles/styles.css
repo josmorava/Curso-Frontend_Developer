@@ -1,0 +1,212 @@
+body{
+    margin: 0px;
+    font-family: 'Muli', sans-serif;
+    background-color: #8f57fd;
+}
+.header{
+    background-color: #8f57fd;;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    /*separar elementos a cada esquina-->*/justify-content: space-between;
+}
+.header__img{
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+.header__menu{
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.header__menu ul{
+    display: none;
+    /*dato--> para quitar los elementos de las lista ordenada/desordenada*/
+    list-style: none;
+    padding: 0px;
+    position: absolute;
+    width: 100px;
+    text-align: right;
+    margin: 0px 0px 0px -14px;;
+}
+.header__menu:hover ul, ul:hover{
+    /*--mostrar menu al hover*/
+    display: block;
+}
+.header__menu li{
+    margin: 10px 0px;
+}
+.header__menu li a:hover{
+    text-decoration: underline;
+}
+.header__menu li a {
+    color: white;
+    text-decoration: none;
+}
+.header__menu--profile{
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+}
+.header__menu--profile img{
+    margin-right: 8px;
+    width: 40px;
+}
+.header__menu--profile p {
+    margin: 0px;
+    color: white;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 80px 0;
+}
+.main{
+    height: 300px;
+}
+.main__title{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+.categories__title{
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    padding-left: 30px;
+    width: 100%;
+}
+.main__input{
+    border: 2px solid white;
+    border-radius: 40px;
+    color: white;
+    font-family: 'Moli', sans-serif;
+    font-size: 15px;
+    height: 50px;
+    padding: 0px 20px;
+    width: 70%;
+    background-color: rgba(255,255,255, 0.1);
+    outline: none;
+
+}
+/*propiedades para los elementos de input*/
+::placeholder{
+    color: white;
+}
+
+.carrousel{
+    width: 100%;
+    /*scroll-->*/overflow: scroll;
+    padding: 30px;
+    position: relative;
+}
+.carrousel__container{
+    /*elementos al lado del otro pasando el vp*/white-space: nowrap;
+    margin: 40px 0;
+    width: 100%;
+    white-space: nowrap;
+}
+.carrousel-item{
+    width: 200px;
+    height: 250px;
+    border-radius: 20px;
+    background-color: blueviolet;
+    overflow: hidden;
+    margin-left: 10px;
+    display: inline-block;
+    /*cambia el cursor del mouse-->manito-->*/cursor: pointer;
+    transition: .5s;
+    transform-origin: center left;
+    position: relative;
+}
+     /*'~'--> cuando sea hover y cuando no*/
+.carrousel-item:hover ~ .carrousel-item{
+    transform: translate3d(100px , 0 , 0);
+}
+.carrousel__container:hover .carrousel-item {
+    opacity: 0.3;
+}
+.carrousel__container:hover .carrousel-item:hover{
+    transform: scale(1.5);
+    opacity: 1;
+}
+.carrousel-item__img{
+    width: 200px;
+    height: 250px;
+    /*adapta la imagen al sitio-->*/object-fit: cover;
+}
+.carrousel-item__details{
+    /*desvanecimiento en el color-->*/background: linear-gradient(to top, rgba(0,0,0, 0.9) 0%,  rgba(0,0,0, 0) 70%);
+    opacity: 0;
+    transition: 1s opacity;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    cursor: pointer;
+    /*elementos flexibles*/
+    display: flex;
+    /*elementos alineados al inicio-flexibles*/
+    align-items: flex-start;
+    /*justificacion de todo el contenido al final-flexible*/
+    justify-content: flex-end;
+    /*hubicando cotenido flexibl en columnas*-->Importante*/
+    flex-direction: column;
+
+}
+.carrousel-item__details--img{
+    width: 35px;
+    height: 35px;
+}
+.carrousel-item:hover .carrousel-item__details{
+    opacity: 1;
+}
+.carrousel-item__details--title{
+    color:white;
+    margin: 5px 0px 0px 0px;
+}
+.carrousel-item__details--subtitle{
+    color:white;
+    font-size: 8px;
+    margin: 3px 0px;
+}
+
+.carrousel-item__details:hover{
+    opacity: 1;
+}
+.footer{
+    align-items: center;
+    background-color: #8f57fd;
+    display: flex;
+    width: 100%;
+    height: 100px;
+}
+.footer a{
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0px 0px 0px 30px;
+    text-decoration: none;
+}
+.footer a:hover{
+    text-decoration: underline;
+}
+
+
+/*QUERYES*/
+@media only screen and (max-width: 600px) {
+    .main__description--title {
+      font-size: 30px;
+    }
+  
+    .footer {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
